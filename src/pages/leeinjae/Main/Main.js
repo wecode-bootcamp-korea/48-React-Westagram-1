@@ -1,9 +1,12 @@
 import React from "react";
 import "./Main.scss";
-import logo from "../../../assets/images/이인재/instagram.png";
-import compass from "../../../assets/images/이인재/compass.png";
-import heart from "../../../assets/images/이인재/heart.png";
-import profile from "../../../assets/images/이인재/user.png";
+import { BsInstagram } from "react-icons/bs";
+import {
+  AiOutlineCompass,
+  AiOutlineHeart,
+  AiOutlineUser,
+  AiOutlineSearch,
+} from "react-icons/ai";
 import StoryUser from "../../../components/이인재/StoryUser";
 import RecommendUser from "../../../components/이인재/RecommendUser";
 import Feed from "../../../components/이인재/Feed";
@@ -17,7 +20,7 @@ const Main = () => {
         <div className="headerContent">
           <div className="logoBox">
             <div className="instagramLogo">
-              <img src={logo} alt="로고" />
+              <BsInstagram size={25} />
             </div>
             <div className="divider"></div>
             <a className="title" href="/">
@@ -26,12 +29,12 @@ const Main = () => {
           </div>
           <div className="searchForm">
             <input className="searchInput" type="text" placeholder="검색" />
-            <i className="searchIcon"></i>
+            <AiOutlineSearch className="searchIcon" size={15} />
           </div>
           <div className="userMenu">
-            <img src={compass} alt="나침반" />
-            <img src={heart} alt="하트" />
-            <img src={profile} alt="프로필" />
+            <AiOutlineCompass size={30} />
+            <AiOutlineHeart size={30} />
+            <AiOutlineUser size={30} />
           </div>
         </div>
       </nav>
