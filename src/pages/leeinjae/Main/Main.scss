@@ -206,7 +206,7 @@ article {
     align-items: center;
     gap: 15px;
 
-    img {
+    * {
       width: 25px;
       cursor: pointer;
     }
@@ -216,7 +216,7 @@ article {
     display: flex;
     align-items: center;
 
-    img {
+    * {
       width: 25px;
       cursor: pointer;
     }
@@ -303,7 +303,7 @@ article {
 }
 
 .story {
-  width: 100%;
+  width: 75%;
   height: 200px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   display: flex;
@@ -380,7 +380,7 @@ article {
 }
 
 .recommend {
-  width: 100%;
+  width: 75%;
   height: 160px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   display: flex;

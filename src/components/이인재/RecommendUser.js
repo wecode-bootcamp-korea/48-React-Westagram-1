@@ -36,6 +36,7 @@ const RecommendUser = () => {
                 <p>{el.name}</p>
                 <p>{el.know}</p>
               </div>
+              
               <button>팔로우</button>
             </div>
           ))}

@@ -1,24 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { AiOutlineHeart } from "react-icons/ai";
+import { BsChat, BsBookmark } from "react-icons/bs";
+import { FiShare } from "react-icons/fi";
 
-const images = [
-  {
-    id: 1,
-    src: "https://cdn-icons-png.flaticon.com/128/1077/1077035.png",
-    alt: "heart",
-  },
-  {
-    id: 2,
-    src: "https://cdn-icons-png.flaticon.com/128/589/589671.png",
-    alt: "chat",
-  },
-  {
-    id: 3,
-    src: "https://cdn-icons-png.flaticon.com/128/3580/3580382.png",
-    alt: "share",
-  },
-];
+const Feed = () => {
+  const [toggle, setToggle] = useState(false);
 
-const Feed = ({ username }) => {
+  const handleFill = () => {};
+
   return (
     <article>
       <div className="writer">
@@ -47,15 +36,12 @@ const Feed = ({ username }) => {
         <div className="feedTextBox">
           <div className="feedContentImageBox">
             <div className="img-left">
-              {images.map((el) => (
-                <img id={el.id} src={el.src} alt={el.alt} />
-              ))}
+              <AiOutlineHeart size={25} />
+              <BsChat size={21} />
+              <FiShare size={20} />
             </div>
             <div className="img-right">
-              <img
-                src="https://cdn-icons-png.flaticon.com/128/25/25667.png"
-                alt="북마크 아이콘"
-              />
+              <BsBookmark size={20} />
             </div>
           </div>
 
