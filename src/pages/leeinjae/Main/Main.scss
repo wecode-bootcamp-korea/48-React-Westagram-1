@@ -206,6 +206,11 @@ article {
     align-items: center;
     gap: 15px;
 
+    .heart {
+      display: flex;
+      align-items: center;
+    }
+
     * {
       width: 25px;
       cursor: pointer;

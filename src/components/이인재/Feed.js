@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BsChat, BsBookmark } from "react-icons/bs";
 import { FiShare } from "react-icons/fi";
 
 const Feed = () => {
-  const [toggle, setToggle] = useState(false);
+  const [state, setState] = useState(false);
 
-  const handleFill = () => {};
+  const handleHeartChange = () => {
+    setState(!state);
+  };
 
   return (
     <article>
@@ -36,7 +38,13 @@ const Feed = () => {
         <div className="feedTextBox">
           <div className="feedContentImageBox">
             <div className="img-left">
-              <AiOutlineHeart size={25} />
+              <div onClick={handleHeartChange} className="heart">
+                {state ? (
+                  <AiFillHeart size={25} color="red" />
+                ) : (
+                  <AiOutlineHeart size={25} />
+                )}
+              </div>
               <BsChat size={21} />
               <FiShare size={20} />
             </div>
