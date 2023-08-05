@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BsChat, BsBookmark } from "react-icons/bs";
 import { FiShare } from "react-icons/fi";
+import FeedItem from "./FeedItem";
 
 const Feed = () => {
   const [state, setState] = useState(false);
+  let [show, setShow] = useState(false);
 
   const handleHeartChange = () => {
     setState(!state);
+  };
+
+  const handleShow = () => {
+    setShow(!show);
   };
 
   return (
@@ -57,17 +63,22 @@ const Feed = () => {
             <img
               className="descriptionProfile"
               src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4QAqRXhpZgAASUkqAAgAAAABADEBAgAHAAAAGgAAAAAAAABHb29nbGUAAP/bAIQAAwICAwICAwMDAwQDAwQFCAUFBAQFCgcHBggMCgwMCwoLCw0OEhANDhEOCwsQFhARExQVFRUMDxcYFhIYEhQVFAEDBAQCAgIJAgIJCAICAggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgI/8AAEQgALAAsAwERAAIRAQMRAf/EABoAAQEAAgMAAAAAAAAAAAAAAAADBAYHCAn/xAAyEAABAwMCAgcGBwAAAAAAAAACAQMEAAUGERIHFBMxNFNykrEIFRYXIUEJIiMyM0JR/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APLSVLfSU9+s5+9f7L/tBLm3++c8y0Dm3++c8y0Dm3++c8y0Dm3++c8y0Dm3++c8y0CX2p7xl60EqBQKBQKDljhDwAunHZvKAx6e2zfLQnMpDmxngiPMbHSNSmoKsxiRWxROZJpst38iKmihzbiP4dUzM7FY75Fz2FCtF4dhLHfnwkbIY82I2UN8xF4tEOc4sAkRV2m2RJuTQVDGzz2HMcwHGH8xk8QrhdcOj6xHSs1ljzbik3pwYQUaamqz0W8l3ET4kJIjahuISUIx/YWgXC8X6yRMyvC3fGYMa8XsH8Z2gsJ+EUsBhbZJLIk7R2oyaNIZb9pqjakQbbbPYNwvPMJ4e5FaM4l4zbMkiMQ4Tl8t7LM2dPeuE8QJ2O5MRBDoWmABI5Ok7tIxb11Eg6RTYqwpj8dXGnlZcJtXGTQwLRdNRJOtF+y/egzHr5cWIU60tz5TdqkSUkPQReJGHHA3IBkGu1SFCJEVU1TcunXQVTMb8lmK0e+7j7qKOMQoHNudArIvE+LSt67diPGbqDpohkRdaqtBsHzz4kfFA5L8wcq+IhicgN399SebSNu3dCj2/f0e767NdNfrpQYkri5nU6FaYcnNMhkRLTLSfbmHbq+TcKShKSPMip6NuISqu8dF1VV1oM97j5xOkzJ0t7iNlrsudFSFLfO+SlORHRTJGXCU9SBFdcXauqauF9PzLQaJQVl9qe8ZetBKgUCgUCgrL7U94y9aCVAoFAoFB//Z"
-              alt="vmfhvlf"
+              alt="프로필 이미지"
             />
-            <p>aineworld님 외 10명이 좋아합니다</p>
+            <p>
+              <b>aineworld</b>님 외 <b>10</b>명이 좋아합니다
+            </p>
           </div>
-          <div>
-            cannon_mj 위워크에서 진행한 베이킹 클래스..
-            <button className="more">더 보기</button>
-            <br />
-            neceosecius 거봐 좋았잖아~~~~
-            <br />
-            42분 전
+          <div className="descriptionContent">
+            <div className="initialContent">
+              <p>
+                <b>cannon_mj</b> 위워크에서 진행한 베이킹 클래스..
+              </p>
+              <button className="more" onClick={handleShow}>
+                {show ? "숨기기" : "더 보기"}
+              </button>
+            </div>
+            {show && <FeedItem />}
           </div>
         </div>
       </div>

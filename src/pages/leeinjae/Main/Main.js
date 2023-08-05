@@ -10,9 +10,14 @@ import {
 import StoryUser from "../../../components/이인재/StoryUser";
 import RecommendUser from "../../../components/이인재/RecommendUser";
 import Feed from "../../../components/이인재/Feed";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
-  // const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+
+  const goToProfile = () => {
+    navigate("/lee-main/profile");
+  };
 
   return (
     <div className="main">
@@ -34,7 +39,7 @@ const Main = () => {
           <div className="userMenu">
             <AiOutlineCompass size={30} />
             <AiOutlineHeart size={30} />
-            <AiOutlineUser size={30} />
+            <AiOutlineUser size={30} onClick={goToProfile} />
           </div>
         </div>
       </nav>
