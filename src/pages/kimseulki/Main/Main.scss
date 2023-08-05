@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@700&display=swap');
+
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+
+  a {
+    text-decoration-line: none;
+  }
+  
+  link {
+    text-decoration: none;
+  }
+  
+  h1 {
+    visibility: hidden;
+  }
+  
+  ul li {
+    list-style-type: none;
+  }
+  
+  .logo_font {
+    font-family: 'Lobster', cursive;
+  }
+
+  nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 50px;
+    background-color: white;
+    border: solid 0.5px #dfdcdc;
+
+    @mixin main_nav_right {
+      position: absolute;
+      top : 15px;
+    }
+
+    .main_icon_logo {
+      @include main_nav_right;
+      left: 260px;
+      width: 20px;
+    }
+
+    .main_logo_div {
+      @include main_nav_right;
+      left: 295px;
+      width: 10px;
+      height: 20px;
+      border-left: solid 1.5px black;
+    }
+
+    .main_logo_font {
+      @include main_nav_right;
+      left: 310px;
+      font-size : 20px;
+      
+      p {
+        color: black;
+      }
+    }
+
+    .main_nav_search {
+      position: inherit;
+      margin-top: 15px;
+      border-radius: 3px;
+
+      .main_icon_search {
+        position: absolute;
+        top : 22px;
+        margin-left: 50px;
+        width : 8px;
+        filter: opacity(0.5);
+      }
+
+      input {
+        font-size:10px;
+        width: 150px;
+        height: 15px;
+        text-align: center;
+        border: solid 0.5px #dfdcdc;
+        background-color: #f9f9f9;
+      }
+    }
+
+    @mixin main_nav_left {
+      position: absolute;
+      top : 15px;
+      width: 20px;
+    }
+
+    .main_icon_compass {
+      @include main_nav_left;
+      right: 355px;
+    }
+
+    .main_icon_heart {
+      @include main_nav_left;
+      right: 305px;
+    }
+
+    .main_icon_login {
+      @include main_nav_left;
+      right: 260px;
+    }
+  }
+
+  .feeds {
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 270px;
+    width: 430px;
+    background-color: white;
+    border: solid 0.5px #dfdcdc;
+    text-align: left;
+
+    .follow_info {
+      width: 100%;
+      height: 35px;
+      border-bottom: solid 0.5px #dfdcdc; 
+
+     .main_follow_info_user {
+      position: absolute;
+      top: 8px;
+      left: 10px;
+      width: 20px;
+      border: solid 1px #dfdcdc;
+      border-radius: 50%;
+     }
+     
+     .main_follow_info_id {
+      position: absolute;
+      left: 42px;
+      top: 11px;
+      font-size: 12px;
+      font-weight: 600;
+     }
+
+     .main_follow_info_menu {
+      position: absolute;
+      right: 10px;
+      width: 15px;
+      top: 10px;
+     }
+    }
+
+    .follow_post {
+      width: 100%;
+      height: 360px;
+      border-bottom: solid 0.5px #dfdcdc;
+    
+      .follow_post_img{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 360px;
+      }
+    }
+
+    .images_post {
+      border-bottom: solid 0.5px #dfdcdc;
+
+      p {
+        display:inline-block;
+      }
+
+      .keep_imgs {
+        width: 100%;
+        height: 30px;
+      
+        .main_icon_keep_heart {
+          margin-top: 7px;
+          margin-left: 9px;
+          width: 18px;
+          height: 20px;
+        }
+
+        .main_icon_keep_chat {
+          margin-top: 7px;
+          margin-left: 8px;
+          width: 20px;
+          height: 21px;
+        }
+
+        .main_icon_keep_upload {
+          margin-top: 7px;
+          margin-left: 8px;
+          width: 20px;
+          height: 19px;
+        }
+
+        .main_icon_keep {
+          float: right;
+          margin-top: 7px;
+          margin-right: 9px;
+          width: 20px;
+          height: 21px;
+        }
+      }
+
+      .love_counts {
+        height: 22px;
+        font-size: 8px;
+
+        .user_push_love_id {
+          float: left;
+          margin-top: 3px;
+          margin-left: 10px;
+          width: 13px;
+          border: solid 1px #dfdcdc;
+          border-radius: 50%;
+        }
+
+        .user_push_loves {
+          display:inline-block;
+          margin-left: 5px;
+          margin-top: 5px;
+
+          strong {
+            font-weight: 600;
+            color: black;
+          }
+        }
+      }
+
+      .img_content {
+        height: 15px;
+        font-size: 8px;
+
+        .user_id {
+          font-weight: 600;
+          color: black;
+          margin-left: 9px;
+          margin-top: 3px;
+        }      
+
+        .img_comment {
+          margin-left: 3px;
+
+          p {
+            margin-left: 2px;
+            color: grey;
+          }
+        }
+      }
+
+      .coments_show {
+        height: 15px;
+        font-size: 8px;
+
+        .coments_user {
+          margin-left: 9px;
+          margin-top: 2px;
+          font-weight: 600;
+          color: black;
+        }
+
+        .coments_content {
+          margin-left: 3px;
+        }
+      }
+
+      .contents_time {
+        height: 15px;
+        font-size: 8px;
+        margin-left: 9px;
+        color: grey;
+      }
+    }
+
+    .coments {
+      height: 15px;
+      font-size: 3px;
+
+      p {
+        display:inline-block;
+      }
+
+      .coments_left {
+        margin-left: 9px;
+        margin-top: 7px;
+        color: grey;
+      }
+
+      .coments_right {
+        float : right;
+        margin-right: 9px;
+        margin-top: 7px;
+        color: blue;
+        color: rgba(0, 162, 255, 0.3);
+      }
+    }
+
+    .coments_heart {
+      width: 8px;
+      float: right;
+      margin-right: 10px;
+      margin-top: 3px;
+      filter: opacity(0.5);
+    }
+  }
+
+  .main-right {
+    position: absolute;
+    top: 80px;
+    right: 270px;
+    width: 230px;
+    height: 400px;
+    background-color: #f9f9f9;
+    text-align: left;
+
+    p {
+      display:inline-block;
+      color: black;
+    }
+
+    .user_info {
+      height: 45px;
+      font-size: 12px;
+      background-color: #f9f9f9;
+      
+      .main_user_wecode {
+        float: left;
+        margin-left: 3px;
+        width: 32px;
+        border: solid 1px #dfdcdc;
+        border-radius: 50%;
+      }
+
+      .main_user_id {
+        float: left;
+        font-weight: 600;
+        margin-left: 10px;
+        margin-top: 3px;
+      }
+
+      .main_user_name {
+        float: left;
+        margin-left: 10px;
+        margin-top: 5px;
+        font-size: 3px;
+        color: grey;
+        font-weight: 500;
+      }
+    }
+
+    .story_info {
+      height: 155px;
+      background-color: white;
+      border: solid 0.5px #dfdcdc;
+      padding: 10px; 
+      font-size: 12px;
+    
+      .story_hd {
+        height: 15px;
+        
+        .story_info_left {
+          color: grey;
+          font-weight: 600;
+        }
+
+        .story_info_right {
+          float: right;
+          font-weight: 600;
+        }
+      }  
+
+      .follow_user {
+        width: 25px;
+        border: solid 1.5px rgb(253, 83, 111);
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+
+      .follow_user_id {
+        position: absolute;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      .follow_user_story_time {
+        margin-left: 10px;
+        color: grey;
+      }      
+    }
+
+    .recd {
+      margin-top: 15px;
+      height: 135px;
+      background-color: white;
+      border: solid 0.5px #dfdcdc;
+      padding: 10px; 
+      font-size: 12px;
+
+      .recd_hd {
+        height: 15px;
+        
+        .recd_hd_left {
+          color: grey;
+          font-weight: 600;
+        }
+
+        .recd_hd_right {
+          float: right;
+          font-weight: 600;
+        }
+      } 
+
+      .recd_user {
+        width: 25px;
+        border: solid 1.5px #dfdcdc;
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+
+      .recd_id {
+        position: absolute;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      .recd_cm {
+        margin-left: 10px;
+        color: grey;
+      }
+
+      .recd_follow {
+        float: right;
+        margin-top: 10px;
+        font-weight: 600;
+        color: blue;
+        color: rgba(0, 162, 255, 1);
+      }
+    }
+
+    .com_info {
+      margin-top: 10px;
+      font-size: 11px;
+      text-align: left;
+      background-color: #f9f9f9;
+
+      p {
+        color: rgb(177, 176, 176);
+        margin-top: 5px;
+      }
+
+      .com_name {
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+
+
+
+
