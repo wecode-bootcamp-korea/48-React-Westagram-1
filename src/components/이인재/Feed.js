@@ -84,7 +84,7 @@ const Feed = () => {
       </div>
 
       <div className="comment">
-        <input type="text" placeholder="댓글 달기..."></input>
+        <textarea type="text" placeholder="댓글 달기..."></textarea>
         <button>게시</button>
       </div>
     </article>
