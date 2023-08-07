@@ -7,6 +7,20 @@ import FeedItem from "./FeedItem";
 const Feed = () => {
   const [state, setState] = useState(false);
   const [show, setShow] = useState(false);
+  const [text, setText] = useState("");
+  const [list, setList] = useState([]);
+
+  const onTextChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (text === "") return;
+    setText("");
+    setList((cur) => [...cur, text]);
+    console.log(list);
+  };
 
   const handleHeartChange = () => {
     setState(!state);
@@ -78,15 +92,20 @@ const Feed = () => {
                 {show ? "숨기기" : "더 보기"}
               </button>
             </div>
-            {show && <FeedItem />}
+            <ul className="hideContent">{show && <FeedItem lists={list} />}</ul>
           </div>
         </div>
       </div>
 
-      <div className="comment">
-        <textarea type="text" placeholder="댓글 달기..."></textarea>
+      <form className="comment" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="댓글 달기..."
+          value={text}
+          onChange={onTextChange}
+        />
         <button>게시</button>
-      </div>
+      </form>
     </article>
   );
 };

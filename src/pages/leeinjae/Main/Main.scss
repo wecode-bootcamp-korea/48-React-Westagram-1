@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  list-style-type: none;
 }
 
 .main {
@@ -267,12 +268,11 @@ article {
   align-items: center;
   justify-content: space-between;
 
-  textarea {
+  input {
     width: 90%;
     height: 100%;
     font-size: 14px;
     margin-left: 10px;
-    resize: none;
     outline: none;
     border: none;
 
