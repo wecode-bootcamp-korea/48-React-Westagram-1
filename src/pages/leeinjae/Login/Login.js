@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.scss";
 // import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [change, setChange] = useState("");
   const navigate = useNavigate();
+
+  const saveUserId = (e) => {
+    setChange(e.target.value);
+  };
 
   const goToMain = () => {
     navigate("/lee-main");
@@ -16,10 +21,15 @@ const Login = () => {
         <div className="title">westagram</div>
         <div className="form">
           <input
+            onChange={saveUserId}
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           ></input>
-          <input type="password" placeholder="비밀번호"></input>
+          <input
+            onChange={saveUserId}
+            type="password"
+            placeholder="비밀번호"
+          ></input>
         </div>
         <div className="loginButton">
           {/* <Link to='/main'>로그인</Link> */}

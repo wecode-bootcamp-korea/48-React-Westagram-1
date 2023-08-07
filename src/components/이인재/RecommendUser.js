@@ -30,13 +30,13 @@ const RecommendUser = () => {
       <div className="userProfile">
         <div className="recommendUserDescription">
           {recommendUserInfo.map((el) => (
-            <div className="recommendUserContent">
+            <div className="recommendUserContent" key={el.id}>
               <img src={el.src} alt={el.alt} />
               <div className="recommendUserContentText">
                 <p>{el.name}</p>
                 <p>{el.know}</p>
               </div>
-              
+
               <button>팔로우</button>
             </div>
           ))}

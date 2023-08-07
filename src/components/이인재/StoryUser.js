@@ -35,7 +35,7 @@ const StoryUser = () => {
   return (
     <>
       {userInfo.map((el) => (
-        <div className="storyUserContent">
+        <div className="storyUserContent" key={el.id}>
           <img src={el.src} alt={el.alt} />
           <div className="storyUserContentText">
             <p>{el.name}</p>

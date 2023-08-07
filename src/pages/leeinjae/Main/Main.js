@@ -1,49 +1,15 @@
 import React from "react";
 import "./Main.scss";
-import { BsInstagram } from "react-icons/bs";
-import {
-  AiOutlineCompass,
-  AiOutlineHeart,
-  AiOutlineUser,
-  AiOutlineSearch,
-} from "react-icons/ai";
+
 import StoryUser from "../../../components/이인재/StoryUser";
 import RecommendUser from "../../../components/이인재/RecommendUser";
 import Feed from "../../../components/이인재/Feed";
-import { useNavigate } from "react-router-dom";
+import Navbar from "../../../components/이인재/Navbar";
 
 const Main = () => {
-  const navigate = useNavigate();
-
-  const goToProfile = () => {
-    navigate("/lee-main/profile");
-  };
-
   return (
     <div className="main">
-      <nav className="header">
-        <div className="headerContent">
-          <div className="logoBox">
-            <div className="instagramLogo">
-              <BsInstagram size={25} />
-            </div>
-            <div className="divider"></div>
-            <a className="title" href="/">
-              westagram
-            </a>
-          </div>
-          <div className="searchForm">
-            <input className="searchInput" type="text" placeholder="검색" />
-            <AiOutlineSearch className="searchIcon" size={15} />
-          </div>
-          <div className="userMenu">
-            <AiOutlineCompass size={30} />
-            <AiOutlineHeart size={30} />
-            <AiOutlineUser size={30} onClick={goToProfile} />
-          </div>
-        </div>
-      </nav>
-
+      <Navbar />
       <main>
         <div className="mainContentBox">
           <div className="feeds">

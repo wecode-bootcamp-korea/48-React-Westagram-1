@@ -6,7 +6,7 @@ import FeedItem from "./FeedItem";
 
 const Feed = () => {
   const [state, setState] = useState(false);
-  let [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
 
   const handleHeartChange = () => {
     setState(!state);
