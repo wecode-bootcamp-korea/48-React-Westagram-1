@@ -57,6 +57,7 @@ const Login = () => {
                 : "rgb(225, 238, 250)",
             }}
             onClick={goToMain}
+            disabled={!isValid ? true : false}
           >
             로그인
           </button>
