@@ -12,27 +12,17 @@ const Login = () => {
 
   const handleId = (e) => {
     setId(e.target.value);
-    const idValidate = e.target.value;
-
-    setIsValid(idValidate);
-
-    idValidate.includes("@") && password.length >= 5
-      ? setIsValid(true)
-      : setIsValid(false);
-    console.log(idValidate);
   };
 
   const handlePassword = (e) => {
     setPassword(e.target.value);
+  };
 
-    const passwordValidate = e.target.value;
-
-    setIsValid(passwordValidate);
-
-    id.includes("@") && passwordValidate.length >= 5
+  const validation = () => {
+    id.includes("@") && password.length >= 5
       ? setIsValid(true)
       : setIsValid(false);
-    console.log(passwordValidate);
+    console.log(id);
   };
 
   const goToMain = () => {
@@ -47,12 +37,14 @@ const Login = () => {
           <input
             onChange={handleId}
             value={id}
+            onKeyUp={validation}
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
             onChange={handlePassword}
             value={password}
+            onKeyUp={validation}
             type="password"
             placeholder="비밀번호"
           />
