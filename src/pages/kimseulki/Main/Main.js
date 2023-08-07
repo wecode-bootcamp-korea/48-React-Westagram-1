@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Main.scss";
 import "../../../style/reset.scss";
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 const Main = () => {
+  const [color, setColor] = useState('red');
+
+  const navigate = useNavigate();
+
+  const goToLogin = () => {                                    
+    navigate('/kim-login');
+  };
+
   return (
     <div className="main">
       <h1>메인페이지</h1>
@@ -27,7 +36,7 @@ const Main = () => {
             <Link to='#!'><img className="main_icon_heart" src="images/김슬기/main_icon_heart.png"></img></Link>
           </li>
           <li>
-            <Link to='/kim-login'><img className="main_icon_login" src="images/김슬기/main_icon_login.png"></img></Link>
+            <img className="main_icon_login" onClick={goToLogin} src="images/김슬기/main_icon_login.png"></img>
           </li>
         </ul>
       </nav>
