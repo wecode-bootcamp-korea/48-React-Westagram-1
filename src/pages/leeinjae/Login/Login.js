@@ -10,6 +10,9 @@ const Login = () => {
 
   const saveUserId = (e) => {
     setChangeId(e.target.value);
+  };
+
+  const saveUserPassword = (e) => {
     setChangePassword(e.target.value);
   };
 
@@ -29,7 +32,7 @@ const Login = () => {
             placeholder="전화번호, 사용자 이름 또는 이메일"
           ></input>
           <input
-            onChange={saveUserId}
+            onChange={saveUserPassword}
             value={changePassword}
             type="password"
             placeholder="비밀번호"
