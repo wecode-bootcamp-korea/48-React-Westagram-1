@@ -4,11 +4,13 @@ import "./Login.scss";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const [change, setChange] = useState("");
+  const [changeId, setChangeId] = useState("");
+  const [changePassword, setChangePassword] = useState("");
   const navigate = useNavigate();
 
   const saveUserId = (e) => {
-    setChange(e.target.value);
+    setChangeId(e.target.value);
+    setChangePassword(e.target.value);
   };
 
   const goToMain = () => {
@@ -22,11 +24,13 @@ const Login = () => {
         <div className="form">
           <input
             onChange={saveUserId}
+            value={changeId}
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           ></input>
           <input
             onChange={saveUserId}
+            value={changePassword}
             type="password"
             placeholder="비밀번호"
           ></input>
