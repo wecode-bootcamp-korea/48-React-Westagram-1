@@ -253,18 +253,18 @@
         }
       }
 
-      .coments_show {
+      .comments_show {
         height: 15px;
         font-size: 8px;
 
-        .coments_user {
+        .comments_user {
           margin-left: 9px;
           margin-top: 2px;
           font-weight: 600;
           color: black;
         }
 
-        .coments_content {
+        .comments_content {
           margin-left: 3px;
         }
       }
@@ -277,30 +277,37 @@
       }
     }
 
-    .coments {
+    .comments {
       height: 15px;
-      font-size: 3px;
 
       p {
         display:inline-block;
       }
 
-      .coments_left {
+      .comments_input {
+        width: 360px;
         margin-left: 9px;
         margin-top: 7px;
         color: grey;
+        font-size: 3px;
+        border: 0;
+        outline: 0;
       }
 
-      .coments_right {
+      .comments_btn {
         float : right;
+        margin-top: 5px;
         margin-right: 9px;
-        margin-top: 7px;
         color: blue;
         color: rgba(0, 162, 255, 0.3);
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        font-size: 3px;
       }
     }
 
-    .coments_heart {
+    .comments_heart {
       width: 8px;
       float: right;
       margin-right: 10px;

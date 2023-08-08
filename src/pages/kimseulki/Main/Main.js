@@ -5,7 +5,22 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'; 
 
 const Main = () => {
-  const [color, setColor] = useState('red');
+
+  const [newComment, setNewComment] = useState('');
+  const [commentList, setCommentList] = useState([]);
+
+  const commentSubmit = (event) => {
+    event.preventDefault();
+    if (newComment.trim() === '') {
+      return;
+    } 
+    setCommentList([...commentList, newComment]);
+    setNewComment('');
+  };
+
+  const commentInput = (event) =>  {
+    setNewComment(event.target.value);
+  }
 
   const navigate = useNavigate();
 
@@ -68,19 +83,27 @@ const Main = () => {
                 <Link to='#!'><p className="user_id">kimseulki_l</p></Link>
                 <p className="img_comment">시애틀 또 가고 싶다...<Link to='#!'><p>더 보기</p></Link></p>
               </div>
-              <div className="coments_show">
-                <Link to='#!'><p className="coments_user">miracle</p></Link>
-                <p className="coments_content">거봐 좋았잖아~~~~♡</p>
-                <Link to='#!'><img className="coments_heart" src="/images/김슬기/main_icon_heart.png"/></Link>
+
+              <div className="comments_show">
+                <ul>
+                  {commentList.map((newComment, index) => (
+                    <li className="commentBox" key={index}>
+                      <p className="comments_user">miracle</p>
+                      <p className="comments_content">{newComment}</p>
+                    <button><img className="comments_heart" src="/images/김슬기/main_icon_heart.png"/></button>
+                    </li>
+                  ))}
+                </ul>
               </div>
               <div className="contents_time">
                 <p>42분 전</p>
               </div>
+
             </div>  
-            <div className="coments">
-            <Link to='#!'><p className="coments_left">댓글 달기...</p></Link>
-            <Link to='#!'><p className="coments_right">게시</p></Link>
-            </div>
+            <form className="comments">
+            <input className="comments_input" required type="text" placeholder="댓글 달기..."/>
+            <button className="comments_btn" type="submit" value={newComment} onChange={commentInput}>게시</button>
+            </form>
           </article>
         </div>
         <div className="main-right">
