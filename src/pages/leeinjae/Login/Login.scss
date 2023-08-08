@@ -1,7 +1,5 @@
-* {
-  box-sizing: border-box;
-  text-decoration: none;
-}
+@import "../../../style/reset.scss";
+@import "../../../style/common.scss";
 
 .container {
   width: 100vw;

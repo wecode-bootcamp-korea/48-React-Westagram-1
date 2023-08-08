@@ -1,6 +1,6 @@
 import React from "react";
+import Navbar from "../Main/components/Navbar";
 import "./Profile.scss";
-import Navbar from "../../../components/이인재/Navbar";
 
 const Profile = () => {
   return (

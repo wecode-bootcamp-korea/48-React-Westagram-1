@@ -31,7 +31,7 @@ const Feed = () => {
   };
 
   return (
-    <article>
+    <article className="article">
       <div className="writer">
         <div className="userBox">
           <img
@@ -80,13 +80,13 @@ const Feed = () => {
               alt="프로필 이미지"
             />
             <p>
-              <b>aineworld</b>님 외 <b>10</b>명이 좋아합니다
+              <b className="bold">aineworld</b>님 외 <b>10</b>명이 좋아합니다
             </p>
           </div>
           <div className="descriptionContent">
             <div className="initialContent">
               <p>
-                <b>cannon_mj</b> 위워크에서 진행한 베이킹 클래스..
+                <b className="bold">cannon_mj</b> 위워크에서 진행한 베이킹 클래스..
               </p>
               <button className="more" onClick={handleShow}>
                 {show ? "숨기기" : "더 보기"}

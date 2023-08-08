@@ -1,10 +1,9 @@
 import React from "react";
+import StoryUser from "./components/StoryUser";
+import RecommendUser from "./components/RecommendUser";
+import Feed from "./components/Feed";
+import Navbar from "./components/Navbar";
 import "./Main.scss";
-
-import StoryUser from "../../../components/이인재/StoryUser";
-import RecommendUser from "../../../components/이인재/RecommendUser";
-import Feed from "../../../components/이인재/Feed";
-import Navbar from "../../../components/이인재/Navbar";
 
 const Main = () => {
   return (
@@ -13,6 +12,7 @@ const Main = () => {
       <main>
         <div className="mainContentBox">
           <div className="feeds">
+            {/* 데이터 생성하고, map 메서드로 각각의 값을 props로 받아 출력하도록 수정 */}
             <Feed />
             <Feed />
           </div>
@@ -35,9 +35,9 @@ const Main = () => {
               </div>
               <div className="storyContent">
                 <div className="storyUser">
-                  <div className="storyUserTime">
-                    <StoryUser />
-                  </div>
+                  {/* <div className="storyUserTime"> */}
+                  <StoryUser />
+                  {/* </div> */}
                 </div>
               </div>
             </div>

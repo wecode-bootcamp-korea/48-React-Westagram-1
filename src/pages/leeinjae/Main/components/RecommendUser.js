@@ -26,7 +26,6 @@ const recommendUserInfo = [
 
 const RecommendUser = () => {
   return (
-    <div className="recommendUser">
       <div className="userProfile">
         <div className="recommendUserDescription">
           {recommendUserInfo.map((el) => (
@@ -42,7 +41,6 @@ const RecommendUser = () => {
           ))}
         </div>
       </div>
-    </div>
   );
 };
 

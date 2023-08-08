@@ -1,10 +1,5 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style-type: none;
-}
+@import "../../../style/reset.scss";
+@import "../../../style/common.scss";
 
 .main {
   width: 100vw;
@@ -127,13 +122,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 50px;
-}
 
-article {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  .article {
+    border: 1px solid rgba(0, 0, 0, 0.4);
 
-  &:last-child {
-    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 50px;
+    }
   }
 }
 
@@ -148,6 +143,7 @@ article {
 
   .userBox {
     display: flex;
+    align-items: center;
     gap: 10px;
 
     .userProfile {
@@ -232,6 +228,10 @@ article {
     width: 20px;
     border-radius: 50%;
   }
+
+  .bold {
+    font-weight: bold;
+  }
 }
 
 .descriptionContent {
@@ -239,7 +239,12 @@ article {
 
   .initialContent {
     display: flex;
+    align-items: center;
     margin-bottom: 10px;
+
+    .bold {
+      font-weight: bold;
+    }
   }
 
   .hideContent {
@@ -290,6 +295,7 @@ article {
 }
 
 .main-right {
+  width: 80%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -323,7 +329,7 @@ article {
 }
 
 .story {
-  width: 75%;
+  width: 100%;
   height: 200px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   display: flex;
@@ -354,8 +360,8 @@ article {
   height: 170px;
   margin: 0 auto;
   display: flex;
-  justify-content: start;
   flex-direction: column;
+  justify-content: start;
   gap: 10px;
   overflow-y: scroll;
 
@@ -366,6 +372,10 @@ article {
 
 .storyUser,
 .userProfile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
   img {
     width: 35px;
     height: 35px;
@@ -376,11 +386,6 @@ article {
   p {
     font-size: 16px;
   }
-}
-
-.storyUserTime {
-  display: flex;
-  flex-direction: column;
 
   .storyUserContent {
     display: flex;
@@ -389,7 +394,17 @@ article {
   }
 }
 
+// .storyUserTime {
+//   display: flex;
+//   flex-direction: column;
+
+// }
+
 .storyUserContentText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
   p {
     font-size: 14px;
 
@@ -400,45 +415,44 @@ article {
 }
 
 .recommend {
-  width: 75%;
+  width: 100%;
   height: 160px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
 }
 
-.recommendUser {
-  display: flex;
-  font-size: 14px;
-  align-items: center;
-  justify-content: space-between;
-
-  button {
-    outline: none;
-    background: transparent;
-    border: none;
-    color: blue;
-    cursor: pointer;
-  }
-}
-
 .recommendUserDescription {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 
   .recommendUserContent {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    button {
+      width: 30%;
+      outline: none;
+      background: transparent;
+      border: none;
+      color: blue;
+      cursor: pointer;
+    }
   }
 }
 
 .recommendUserContentText {
-  width: 150px;
-  // width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 
   p {
     font-size: 14px;
+    white-space: nowrap;
 
     &:last-child {
       color: rgba(0, 0, 0, 0.4);
