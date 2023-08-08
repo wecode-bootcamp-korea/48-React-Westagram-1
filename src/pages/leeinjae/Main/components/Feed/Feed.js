@@ -4,8 +4,8 @@ import { BsChat, BsBookmark } from "react-icons/bs";
 import { FiShare } from "react-icons/fi";
 import FeedItem from "./FeedItem";
 
-const Feed = () => {
-  const [state, setState] = useState(false);
+const Feed = ({ src }) => {
+  const [toggle, setToggle] = useState(false);
   const [show, setShow] = useState(false);
   const [text, setText] = useState("");
   const [list, setList] = useState([]);
@@ -23,7 +23,7 @@ const Feed = () => {
   };
 
   const handleHeartChange = () => {
-    setState(!state);
+    setToggle(!toggle);
   };
 
   const handleShow = () => {
@@ -48,10 +48,7 @@ const Feed = () => {
         />
       </div>
       <div className="feedImageBox">
-        <img
-          src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
-          alt="피드 이미지"
-        />
+        <img src={src} alt="피드 이미지" />
       </div>
 
       <div className="feedContent">
@@ -59,7 +56,7 @@ const Feed = () => {
           <div className="feedContentImageBox">
             <div className="img-left">
               <div onClick={handleHeartChange} className="heart">
-                {state ? (
+                {toggle ? (
                   <AiFillHeart size={25} color="red" />
                 ) : (
                   <AiOutlineHeart size={25} />
@@ -86,7 +83,8 @@ const Feed = () => {
           <div className="descriptionContent">
             <div className="initialContent">
               <p>
-                <b className="bold">cannon_mj</b> 위워크에서 진행한 베이킹 클래스..
+                <b className="bold">cannon_mj</b> 위워크에서 진행한 베이킹
+                클래스..
               </p>
               <button className="more" onClick={handleShow}>
                 {show ? "숨기기" : "더 보기"}
