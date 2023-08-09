@@ -45,11 +45,7 @@ const Login = () => {
         </div>
         <div className="loginButton">
           <button
-            style={{
-              backgroundColor: isValid
-                ? "rgb(179, 219, 255)"
-                : "rgb(225, 238, 250)",
-            }}
+            className={isValid ? "activeButton" : "inActiveButton"}
             onClick={goToMain}
             disabled={!isValid}
           >
