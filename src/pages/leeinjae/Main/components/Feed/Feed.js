@@ -6,29 +6,28 @@ import FeedItem from "./FeedItem";
 import "./Feed.scss";
 
 const Feed = ({ src }) => {
-  const [toggle, setToggle] = useState(false);
-  const [show, setShow] = useState(false);
-  const [text, setText] = useState("");
-  const [list, setList] = useState([]);
+  const [heartChange, setHeartChange] = useState(false);
+  const [showMoreComments, setShowMoreComments] = useState(false);
+  const [feedComment, setFeedComment] = useState("");
+  const [feedCommentList, setFeedCommentList] = useState([]);
 
   const onTextChange = (e) => {
-    setText(e.target.value);
+    setFeedComment(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text === "") return;
-    setText("");
-    setList((cur) => [...cur, text]);
-    console.log(list);
+    if (feedComment === "") return;
+    setFeedComment("");
+    setFeedCommentList((cur) => [...cur, feedComment]);
   };
 
   const handleHeartChange = () => {
-    setToggle(!toggle);
+    setHeartChange(!heartChange);
   };
 
   const handleShow = () => {
-    setShow(!show);
+    setShowMoreComments(!showMoreComments);
   };
 
   return (
@@ -57,7 +56,7 @@ const Feed = ({ src }) => {
           <div className="feedContentImageBox">
             <div className="img-left">
               <div onClick={handleHeartChange} className="heart">
-                {toggle ? (
+                {heartChange ? (
                   <AiFillHeart size={25} color="red" />
                 ) : (
                   <AiOutlineHeart size={25} />
@@ -88,10 +87,12 @@ const Feed = ({ src }) => {
                 클래스..
               </p>
               <button className="more" onClick={handleShow}>
-                {show ? "숨기기" : "더 보기"}
+                {showMoreComments ? "숨기기" : "더 보기"}
               </button>
             </div>
-            <ul className="hideContent">{show && <FeedItem lists={list} />}</ul>
+            <ul className="hideContent">
+              {showMoreComments && <FeedItem lists={feedCommentList} />}
+            </ul>
           </div>
         </div>
       </div>
@@ -100,7 +101,7 @@ const Feed = ({ src }) => {
         <input
           type="text"
           placeholder="댓글 달기..."
-          value={text}
+          value={feedComment}
           onChange={onTextChange}
         />
         <button>게시</button>
