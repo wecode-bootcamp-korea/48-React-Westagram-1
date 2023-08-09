@@ -165,6 +165,15 @@ main {
   line-height: 25px;
   margin-top: 10px;
 
+  .westagramInfo {
+    color: rgba(0, 0, 0, 0.4);
+
+    &:hover {
+      color: black;
+      font-weight: bold;
+    }
+  }
+
   p:last-child {
     margin-top: 20px;
   }

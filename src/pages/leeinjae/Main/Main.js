@@ -3,15 +3,16 @@ import StoryUser from "./components/StoryUser";
 import RecommendUser from "./components/RecommendUser";
 import Feed from "./components/Feed/Feed";
 import Navbar from "../../../components/Nav/Navbar";
+import { WESTAGRAM_INFO } from "./infoList";
 import "./Main.scss";
 
-const feedDescription = [
+const FEED_IMAGES = [
   {
-    id: 1,
+    id: 0,
     src: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
   },
   {
-    id: 2,
+    id: 1,
     src: "https://images.unsplash.com/photo-1574085733277-851d9d856a3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGRlc3NlcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
   },
 ];
@@ -24,10 +25,9 @@ const Main = () => {
         <div className="mainContentBox">
           <div className="feeds">
             {/* 데이터 생성하고, map 메서드로 각각의 값을 props로 받아 출력하도록 수정 */}
-            {feedDescription.map((el) => (
+            {FEED_IMAGES.map((el) => (
               <Feed src={el.src} />
             ))}
-            {/* <Feed /> */}
           </div>
           <div className="main-right">
             <div className="myProfile">
@@ -64,12 +64,15 @@ const Main = () => {
             </div>
 
             <div className="info">
-              <p>
-                Instagram 정보 · 지원 · 홍보 센터 · API · <br /> 채용 정보 ·
-                개인정보처리방침 · 약관 · <br /> 디렉터리 · 프로필 · 해시태그 ·
-                언어
-              </p>
-              <p>© 2019 INSTAGRAM</p>
+              {WESTAGRAM_INFO.map((el) => (
+                <>
+                  <a href="/" className="westagramInfo">
+                    {el.title}
+                  </a>
+                  <span>·</span>
+                </>
+              ))}
+              <p>© 2023 WESTAGRAM</p>
             </div>
           </div>
         </div>
