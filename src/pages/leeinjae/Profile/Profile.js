@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../Main/components/Navbar";
+import Navbar from "../../../components/Nav/Navbar";
 import "./Profile.scss";
 
 const Profile = () => {

@@ -2,7 +2,7 @@ import React from "react";
 import StoryUser from "./components/StoryUser";
 import RecommendUser from "./components/RecommendUser";
 import Feed from "./components/Feed/Feed";
-import Navbar from "./components/Navbar";
+import Navbar from "../../../components/Nav/Navbar";
 import "./Main.scss";
 
 const feedDescription = [

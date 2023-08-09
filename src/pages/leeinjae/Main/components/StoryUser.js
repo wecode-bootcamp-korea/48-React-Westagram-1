@@ -1,4 +1,5 @@
 import React from "react";
+import "./StoryUser.scss";
 
 const userInfo = [
   {
@@ -36,10 +37,10 @@ const StoryUser = () => {
     <>
       {userInfo.map((el) => (
         <div className="storyUserContent" key={el.id}>
-          <img src={el.src} alt={el.alt} />
+          <img className="storyImg" src={el.src} alt={el.alt} />
           <div className="storyUserContentText">
-            <p>{el.name}</p>
-            <p>{el.time}</p>
+            <p className="storyUserInfo">{el.name}</p>
+            <p className="storyUserInfo">{el.time}</p>
           </div>
         </div>
       ))}

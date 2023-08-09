@@ -1,6 +1,3 @@
-@import "../../../style/reset.scss";
-@import "../../../style/common.scss";
-
 .main {
   width: 100vw;
   height: 100vh;
@@ -8,98 +5,6 @@
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
-}
-
-/* navigation */
-
-.header {
-  position: fixed;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-  background-color: #fff;
-  z-index: 10;
-}
-
-.headerContent {
-  max-width: 80%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-}
-
-.logoBox {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  .instagramLogo {
-    height: 25px;
-
-    * {
-      cursor: pointer;
-    }
-  }
-
-  .divider {
-    width: 1px;
-    height: 30px;
-    background-color: #000;
-  }
-
-  .title {
-    font-family: "Lobster", cursive;
-    font-size: 30px;
-    color: black;
-    padding-bottom: 5px;
-  }
-}
-
-.searchForm {
-  position: relative;
-  display: flex;
-  align-items: center;
-
-  .searchInput {
-    flex: 1;
-    width: 200px;
-    height: 90%;
-    border: 1px solid #000;
-    border-radius: 5px;
-    padding: 0 10px;
-    font-size: 10px;
-
-    &::placeholder {
-      color: #000;
-      text-align: center;
-      font-size: 11px;
-      margin-left: -10px;
-    }
-
-    &:focus::placeholder {
-      opacity: 0;
-    }
-  }
-}
-
-.searchIcon {
-  position: absolute;
-  left: 80px;
-  z-index: 0;
-}
-
-.userMenu {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-
-  * {
-    cursor: pointer;
-  }
 }
 
 /* main */
@@ -122,136 +27,6 @@ main {
   display: flex;
   flex-direction: column;
   gap: 50px;
-
-  .article {
-    border: 1px solid rgba(0, 0, 0, 0.4);
-
-    &:last-child {
-      margin-bottom: 50px;
-    }
-  }
-}
-
-.writer {
-  max-width: 95%;
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-
-  .userBox {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    .userProfile {
-      width: 25px;
-      border-radius: 50%;
-    }
-
-    p {
-      font-weight: bold;
-    }
-  }
-
-  .menuButton {
-    width: 25px;
-    cursor: pointer;
-  }
-}
-
-.feedImageBox {
-  width: 100%;
-  height: 500px;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.feedContent {
-  width: 100%;
-  height: auto;
-  padding-bottom: 20px;
-}
-
-.feedTextBox {
-  max-width: 95%;
-  width: 100%;
-  margin: 0 auto;
-  font-size: 14px;
-}
-
-.feedContentImageBox {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 10px 0;
-
-  .img-left {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    .heart {
-      display: flex;
-      align-items: center;
-    }
-
-    * {
-      width: 25px;
-      cursor: pointer;
-    }
-  }
-
-  .img-right {
-    display: flex;
-    align-items: center;
-
-    * {
-      width: 25px;
-      cursor: pointer;
-    }
-  }
-}
-
-.descriptionBox {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-
-  .descriptionProfile {
-    width: 20px;
-    border-radius: 50%;
-  }
-
-  .bold {
-    font-weight: bold;
-  }
-}
-
-.descriptionContent {
-  margin-top: 20px;
-
-  .initialContent {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-
-    .bold {
-      font-weight: bold;
-    }
-  }
-
-  .hideContent {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
 }
 
 .more {
@@ -348,6 +123,12 @@ main {
   padding: 5px 0 15px 0;
 }
 
+.storyUser {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .all {
   font-weight: bold;
   cursor: pointer;
@@ -370,95 +151,12 @@ main {
   }
 }
 
-.storyUser,
-.userProfile {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  .storyUserContent {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-}
-
-// .storyUserTime {
-//   display: flex;
-//   flex-direction: column;
-
-// }
-
-.storyUserContentText {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-
-  p {
-    font-size: 14px;
-
-    &:last-child {
-      color: rgba(0, 0, 0, 0.4);
-    }
-  }
-}
-
 .recommend {
   width: 100%;
   height: 160px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
-}
-
-.recommendUserDescription {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  .recommendUserContent {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    button {
-      width: 30%;
-      outline: none;
-      background: transparent;
-      border: none;
-      color: blue;
-      cursor: pointer;
-    }
-  }
-}
-
-.recommendUserContentText {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  overflow: hidden;
-
-  p {
-    font-size: 14px;
-    white-space: nowrap;
-
-    &:last-child {
-      color: rgba(0, 0, 0, 0.4);
-    }
-  }
 }
 
 .info {

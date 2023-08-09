@@ -3,6 +3,7 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { BsChat, BsBookmark } from "react-icons/bs";
 import { FiShare } from "react-icons/fi";
 import FeedItem from "./FeedItem";
+import "./Feed.scss";
 
 const Feed = ({ src }) => {
   const [toggle, setToggle] = useState(false);

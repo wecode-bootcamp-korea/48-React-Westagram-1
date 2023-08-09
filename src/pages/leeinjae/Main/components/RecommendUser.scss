@@ -1,0 +1,62 @@
+.userProfile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .storyUserContent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+
+.recommendUserDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .recommendUserContent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    button {
+      width: 30%;
+      outline: none;
+      background: transparent;
+      border: none;
+      color: blue;
+      cursor: pointer;
+    }
+  }
+}
+
+.recommendUserContentText {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  overflow: hidden;
+
+  p {
+    font-size: 14px;
+    white-space: nowrap;
+
+    &:last-child {
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}

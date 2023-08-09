@@ -6,7 +6,8 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import Search from "./Search";
+import Search from "../../pages/leeinjae/Main/components/Search";
+import "./Navbar.scss";
 
 const Navbar = () => {
   const navigate = useNavigate();

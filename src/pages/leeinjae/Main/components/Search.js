@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
+import "./Search.scss";
 
 const Search = () => {
   const [search, setSearch] = useState("");

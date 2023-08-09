@@ -1,0 +1,26 @@
+.storyUserContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .storyImg {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .storyUserContentText {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .storyUserInfo {
+      font-size: 14px;
+
+      &:last-child {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+}
