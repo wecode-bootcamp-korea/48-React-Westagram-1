@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import StoryUser from "./components/StoryUser";
 import RecommendUser from "./components/RecommendUser";
 import Feed from "./components/Feed/Feed";
@@ -6,18 +6,20 @@ import Navbar from "../../../components/Nav/Navbar";
 import { WESTAGRAM_INFO } from "./infoList";
 import "./Main.scss";
 
-const FEED_IMAGES = [
-  {
-    id: 0,
-    src: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FrZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    id: 1,
-    src: "https://images.unsplash.com/photo-1574085733277-851d9d856a3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGRlc3NlcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-  },
-];
-
 const Main = () => {
+  const [feedsData, setFeedsData] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/feedData.json", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => setFeedsData(data));
+  }, []);
+
   return (
     <div className="main">
       <Navbar />
@@ -25,9 +27,18 @@ const Main = () => {
         <div className="mainContentBox">
           <div className="feeds">
             {/* 데이터 생성하고, map 메서드로 각각의 값을 props로 받아 출력하도록 수정 */}
-            {FEED_IMAGES.map((el) => (
-              <Feed src={el.src} />
-            ))}
+            {feedsData.map((feedData) => {
+              return (
+                <Feed
+                  key={feedData.id}
+                  username={feedData.userName}
+                  profileImage={feedData.profileImage}
+                  feedImage={feedData.feedImage}
+                  feedsComment={feedData.feedComment}
+                  likes={feedData.likes}
+                />
+              );
+            })}
           </div>
           <div className="main-right">
             <div className="myProfile">

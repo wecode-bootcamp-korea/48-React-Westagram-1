@@ -4,7 +4,7 @@
   &:last-child {
     margin-bottom: 50px;
   }
-  
+
   .writer {
     max-width: 95%;
     width: 100%;
@@ -13,29 +13,29 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-  
+
     .userBox {
       display: flex;
       align-items: center;
       gap: 10px;
-  
+
       .userProfile {
         width: 25px;
+        height: 25px;
         border-radius: 50%;
       }
-  
+
       p {
         font-weight: bold;
       }
     }
-  
+
     .menuButton {
       width: 25px;
       cursor: pointer;
     }
   }
 }
-
 
 .feedImageBox {
   width: 100%;
@@ -101,6 +101,7 @@
 
   .descriptionProfile {
     width: 20px;
+    height: 20px;
     border-radius: 50%;
   }
 
