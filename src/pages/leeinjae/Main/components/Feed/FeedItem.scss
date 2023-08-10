@@ -1,0 +1,15 @@
+.commentList {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .commentUserImg {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+}

@@ -5,7 +5,7 @@ import { FiShare } from "react-icons/fi";
 import FeedItem from "./FeedItem";
 import "./Feed.scss";
 
-const Feed = ({ username, profileImage, feedImage, feedsComment, likes }) => {
+const Feed = ({ data }) => {
   const [heartChange, setHeartChange] = useState(false);
   const [showMoreComments, setShowMoreComments] = useState(false);
   const [feedComment, setFeedComment] = useState("");
@@ -19,6 +19,7 @@ const Feed = ({ username, profileImage, feedImage, feedsComment, likes }) => {
     e.preventDefault();
     if (feedComment === "") return;
     setFeedComment("");
+    setShowMoreComments(true);
     setFeedCommentList((cur) => [...cur, feedComment]);
   };
 
@@ -34,8 +35,12 @@ const Feed = ({ username, profileImage, feedImage, feedsComment, likes }) => {
     <article className="article">
       <div className="writer">
         <div className="userBox">
-          <img className="userProfile" src={profileImage} alt="프로필 아이콘" />
-          <p>{username}</p>
+          <img
+            className="userProfile"
+            src={data.profileImage}
+            alt="프로필 아이콘"
+          />
+          <p>{data.userName}</p>
         </div>
         <img
           className="menuButton"
@@ -44,7 +49,7 @@ const Feed = ({ username, profileImage, feedImage, feedsComment, likes }) => {
         />
       </div>
       <div className="feedImageBox">
-        <img src={feedImage} alt="피드 이미지" />
+        <img src={data.feedImage} alt="피드 이미지" />
       </div>
 
       <div className="feedContent">
@@ -69,25 +74,32 @@ const Feed = ({ username, profileImage, feedImage, feedsComment, likes }) => {
           <div className="descriptionBox">
             <img
               className="descriptionProfile"
-              src={profileImage}
+              src={data.profileImage}
               alt="프로필 이미지"
             />
             <p>
-              <b className="bold">{username}</b>님 외 <b>{likes}</b>명이
-              좋아합니다
+              <b className="bold">{data.userName}</b>님 외{" "}
+              <b className="bold">{data.likes}</b>명이 좋아합니다
             </p>
           </div>
           <div className="descriptionContent">
             <div className="initialContent">
+              <img
+                className="commentUserImg"
+                src={data.profileImage}
+                alt="프로필 이미지"
+              />
               <p>
-                <b className="bold">{username}</b> {feedsComment}
+                <b className="bold">{data.userName}</b> {data.feedComment}
               </p>
               <button className="more" onClick={handleShow}>
                 {showMoreComments ? "숨기기" : "더 보기"}
               </button>
             </div>
             <ul className="hideContent">
-              {showMoreComments && <FeedItem lists={feedCommentList} />}
+              {showMoreComments && (
+                <FeedItem comments={data.comments} lists={feedCommentList} />
+              )}
             </ul>
           </div>
         </div>

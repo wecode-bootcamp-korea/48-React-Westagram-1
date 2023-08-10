@@ -23,6 +23,33 @@ const Login = () => {
 
   const goToMain = () => {
     navigate("/lee-main");
+
+    // fetch("http://10.58.52.80:3000/users/login  ", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json;charset=utf-8",
+    //   },
+    //   body: JSON.stringify({
+    //     email: userInfo.userId,
+    //     password: userInfo.userPassword,
+    //   }),
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log("data", data);
+    //     if (data.accessToken) {
+    //       localStorage.setItem("token", data.accessToken);
+    //       navigate("/lee-main");
+    //     }
+
+    //     if (data.message === "specified user does not exist") {
+    //       alert("존재하지 않는 아이디입니다");
+    //     }
+
+    //     if (data.message === "invalid password") {
+    //       alert("비밀번호가 다릅니다.");
+    //     }
+    //   });
   };
 
   return (
@@ -42,8 +69,6 @@ const Login = () => {
             type="password"
             placeholder="비밀번호"
           />
-        </div>
-        <div className="loginButton">
           <button
             className={isValid ? "activeButton" : "inActiveButton"}
             onClick={goToMain}

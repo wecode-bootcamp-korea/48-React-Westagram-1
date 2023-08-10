@@ -28,14 +28,18 @@ const Main = () => {
           <div className="feeds">
             {/* 데이터 생성하고, map 메서드로 각각의 값을 props로 받아 출력하도록 수정 */}
             {feedsData.map((feedData) => {
+              // console.log(feedData);
               return (
+                // feedData 전체를 props로 전달하고 댓글 리스트 관리하는 FeedItem에 comments 전체를 props로 전달
                 <Feed
-                  key={feedData.id}
-                  username={feedData.userName}
-                  profileImage={feedData.profileImage}
-                  feedImage={feedData.feedImage}
-                  feedsComment={feedData.feedComment}
-                  likes={feedData.likes}
+                  // key={feedData.id}
+                  // userName={feedData.userName}
+                  // profileImage={feedData.profileImage}
+                  // feedImage={feedData.feedImage}
+                  // feedsComment={feedData.feedComment}
+                  // likes={feedData.likes}
+                  // commentUserName={feedData.comments.map((el) => el.userName)}
+                  data={feedData}
                 />
               );
             })}
