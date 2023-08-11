@@ -2,7 +2,7 @@ import React from "react";
 import "./FeedItem.scss";
 
 const FeedItem = ({ lists, comments }) => {
-  console.log(comments);
+  console.log(lists);
   return (
     <>
       {comments.map((comment) => (
@@ -19,7 +19,17 @@ const FeedItem = ({ lists, comments }) => {
       ))}
 
       {lists.map((elements, index) => (
-        <li key={index}>{elements}</li>
+        <li key={index} className="newCommentList">
+          <img
+            className="newCommentUserImg"
+            src="https://ca.slack-edge.com/TH0U6FBTN-U05CNSZS4ET-02b82fbf4c55-512"
+            alt="프로필 이미지"
+          />
+          <p>
+            <b className="bold">이인재</b>
+            {elements}
+          </p>
+        </li>
       ))}
     </>
   );

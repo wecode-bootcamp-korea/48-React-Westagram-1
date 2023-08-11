@@ -13,3 +13,20 @@
     border-radius: 50%;
   }
 }
+
+.newCommentList {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .newCommentUserImg {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+
+  .bold {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+}
