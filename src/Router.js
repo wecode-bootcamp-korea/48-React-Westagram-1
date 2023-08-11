@@ -10,8 +10,9 @@ import MainAn from "./pages/anbyungwoo/Main/Main";
 import LoginAn from "./pages/anbyungwoo/Login/Login";
 
 // 이인재의 컴포넌트
-import MainLee from "./pages/leeinjae/Main/M의ain";
+import MainLee from "./pages/leeinjae/Main/Main";
 import LoginLee from "./pages/leeinjae/Login/Login";
+import Profile from "./pages/leeinjae/Profile/Profile";
 
 const Router = () => {
   return (
@@ -21,8 +22,9 @@ const Router = () => {
         <Route path="/kim-login" element={<LoginKim />} />
         <Route path="/an-main" element={<MainAn />} />
         <Route path="/an-login" element={<LoginAn />} />
+        <Route path="/" element={<LoginLee />} />
         <Route path="/lee-main" element={<MainLee />} />
-        <Route path="/lee-login" element={<LoginLee />} />
+        <Route path="/lee-main/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
   );
