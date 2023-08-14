@@ -1,0 +1,96 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+
+  a {
+    text-decoration-line: none;
+  }
+  
+  link {
+    text-decoration: none;
+  }
+  
+  h1 {
+    visibility: hidden;
+  }
+  
+  ul li {
+    list-style-type: none;
+  }
+  
+  .logoFont {
+    font-family: 'Lobster', cursive;
+  }
+
+  .loginContent {
+    position: absolute;
+    border: solid 1px #dfdcdc;
+    width: 400px;
+    height: 500px;
+    background-color: white;
+
+    .loginLogo {
+      position: absolute;
+      font-size: 45px;
+      width: 100%;
+      height: 150px;
+      top: 50px;
+    }
+  }
+
+  .loginInputWrap {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top: 160px;
+
+    input{
+      width: 240px;
+      margin-bottom: 5px;
+      font-size: 11px;
+      text-align: left;
+      margin-bottom: 10px;
+      padding: 10px 12px;
+      border-radius: 3px;
+      border: 1px solid #e6e4e4;
+      background-color: #f9f9f9;
+    }
+
+    .loginLink {
+      width: 270px;
+      margin-top: 5px;
+      padding: 7px 10px;
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      border: 30px;
+      border-radius: 5px;
+    }
+
+    .loginBtn {
+      background-color: blue;
+      background-color: rgba(0, 162, 255, 0.3);
+    }
+
+    .validBtn {
+      background-color: #4ec5f4;
+    }
+  }
+
+  .loginLost {
+    position: absolute;
+    width: 100%;
+    bottom: 40px;
+    font-size: 14px;
+
+    p {
+      color: #283d6c;
+    }
+  }
+}

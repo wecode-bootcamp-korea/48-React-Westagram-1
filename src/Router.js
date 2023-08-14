@@ -10,7 +10,7 @@ import MainAn from "./pages/anbyungwoo/Main/Main";
 import LoginAn from "./pages/anbyungwoo/Login/Login";
 
 // 이인재의 컴포넌트
-import MainLee from "./pages/leeinjae/Main/M의ain";
+import MainLee from "./pages/leeinjae/Main/Main";
 import LoginLee from "./pages/leeinjae/Login/Login";
 
 const Router = () => {

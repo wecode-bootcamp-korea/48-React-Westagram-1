@@ -1,0 +1,480 @@
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+
+  a {
+    text-decoration-line: none;
+  }
+
+  link {
+    text-decoration: none;
+  }
+
+  h1 {
+    visibility: hidden;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+
+  .logoFont {
+    font-family: "Lobster", cursive;
+  }
+
+  nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 50px;
+    background-color: white;
+    border: solid 0.5px #dfdcdc;
+
+    @mixin main_nav_right {
+      position: absolute;
+      top: 15px;
+    }
+
+    .mainIconLogo {
+      @include main_nav_right;
+      left: 260px;
+      width: 20px;
+    }
+
+    .mainLogoDiv {
+      @include main_nav_right;
+      left: 295px;
+      width: 10px;
+      height: 20px;
+      border-left: solid 1.5px black;
+    }
+
+    .mainLogoFont {
+      @include main_nav_right;
+      left: 310px;
+      font-size: 20px;
+
+      p {
+        color: black;
+      }
+    }
+
+    .mainNavSearch {
+      position: inherit;
+      margin-top: 15px;
+      border-radius: 3px;
+
+      .mainIconSearch {
+        position: absolute;
+        top: 22px;
+        margin-left: 50px;
+        width: 8px;
+        filter: opacity(0.5);
+      }
+
+      input {
+        font-size: 10px;
+        width: 150px;
+        height: 15px;
+        text-align: center;
+        border: solid 0.5px #dfdcdc;
+        background-color: #f9f9f9;
+      }
+    }
+
+    @mixin main_nav_left {
+      position: absolute;
+      top: 15px;
+      width: 20px;
+    }
+
+    .mainIconCompass {
+      @include main_nav_left;
+      right: 355px;
+    }
+
+    .mainIconHeart {
+      @include main_nav_left;
+      right: 305px;
+    }
+
+    .mainIconLogin {
+      @include main_nav_left;
+      right: 260px;
+    }
+  }
+
+  .feeds {
+    position: absolute;
+    top: 80px;
+    bottom: 0;
+    left: 270px;
+    width: 430px;
+    background-color: white;
+    border: solid 0.5px #dfdcdc;
+    text-align: left;
+
+    .followInfo {
+      width: 100%;
+      height: 35px;
+      border-bottom: solid 0.5px #dfdcdc;
+
+      .mainFollowInfoUser {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        width: 20px;
+        border: solid 1px #dfdcdc;
+        border-radius: 50%;
+      }
+
+      .mainFollowInfoId {
+        position: absolute;
+        left: 42px;
+        top: 11px;
+        font-size: 12px;
+        font-weight: 600;
+        color: black;
+      }
+
+      .mainFollowInfoMenu {
+        position: absolute;
+        right: 10px;
+        width: 15px;
+        top: 10px;
+      }
+    }
+
+    .followPost {
+      width: 100%;
+      height: 360px;
+      border-bottom: solid 0.5px #dfdcdc;
+
+      .followPostImg {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 360px;
+      }
+    }
+
+    .imagesPost {
+      border-bottom: solid 0.5px #dfdcdc;
+
+      p {
+        display: inline-block;
+      }
+
+      .keepImgs {
+        width: 100%;
+        height: 30px;
+
+        .mainIconKeepHeart {
+          margin-top: 7px;
+          margin-left: 9px;
+          width: 18px;
+          height: 20px;
+        }
+
+        .mainIconKeepChat {
+          margin-top: 7px;
+          margin-left: 8px;
+          width: 20px;
+          height: 21px;
+        }
+
+        .mainIconKeepUpload {
+          margin-top: 7px;
+          margin-left: 8px;
+          width: 20px;
+          height: 19px;
+        }
+
+        .mainIconKeep {
+          float: right;
+          margin-top: 7px;
+          margin-right: 9px;
+          width: 20px;
+          height: 21px;
+        }
+      }
+
+      .loveCounts {
+        height: 22px;
+        font-size: 8px;
+
+        .userPushLoveId {
+          float: left;
+          margin-top: 3px;
+          margin-left: 10px;
+          width: 13px;
+          border: solid 1px #dfdcdc;
+          border-radius: 50%;
+        }
+
+        .userPushLoves {
+          display: inline-block;
+          margin-left: 5px;
+          margin-top: 5px;
+
+          strong {
+            font-weight: 600;
+            color: black;
+          }
+        }
+      }
+
+      .imgContent {
+        height: 15px;
+        font-size: 8px;
+
+        .userId {
+          font-weight: 600;
+          color: black;
+          margin-left: 9px;
+          margin-top: 3px;
+        }
+
+        .imgComment {
+          margin-left: 3px;
+
+          p {
+            margin-left: 2px;
+            color: grey;
+          }
+        }
+      }
+
+      .commentsShow {
+        height: 15px;
+        font-size: 8px;
+
+        .commentsUser {
+          margin-left: 9px;
+          margin-top: 2px;
+          font-weight: 600;
+          color: black;
+        }
+
+        .commentsContent {
+          margin-left: 3px;
+        }
+      }
+
+      .contentsTime {
+        height: 15px;
+        font-size: 8px;
+        margin-left: 9px;
+        color: grey;
+      }
+    }
+
+    .comments {
+      height: 15px;
+
+      p {
+        display: inline-block;
+      }
+
+      .commentsInput {
+        width: 360px;
+        margin-left: 9px;
+        margin-top: 7px;
+        color: grey;
+        font-size: 3px;
+        border: 0;
+        outline: 0;
+      }
+
+      .commentsBtn {
+        float: right;
+        margin-top: 5px;
+        margin-right: 9px;
+        color: blue;
+        color: rgba(0, 162, 255, 0.3);
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        font-size: 3px;
+      }
+    }
+
+    button {
+      border: 0;
+      outline: 0;
+      background-color: white;
+
+      .commentsHeart {
+        width: 8px;
+        margin-right: 50px;
+        margin-top: 3px;
+        filter: opacity(0.5);
+      }
+    }
+  }
+
+  .mainRight {
+    position: absolute;
+    top: 80px;
+    right: 270px;
+    width: 230px;
+    height: 400px;
+    background-color: #f9f9f9;
+    text-align: left;
+
+    p {
+      display: inline-block;
+      color: black;
+    }
+
+    .userInfo {
+      height: 45px;
+      font-size: 12px;
+      background-color: #f9f9f9;
+
+      .mainUserWecode {
+        float: left;
+        margin-left: 3px;
+        width: 32px;
+        border: solid 1px #dfdcdc;
+        border-radius: 50%;
+      }
+
+      .mainUserId {
+        float: left;
+        font-weight: 600;
+        margin-left: 10px;
+        margin-top: 3px;
+      }
+
+      .mainUserName {
+        float: left;
+        margin-left: 10px;
+        margin-top: 5px;
+        font-size: 3px;
+        color: grey;
+        font-weight: 500;
+      }
+    }
+
+    .storyInfo {
+      height: 155px;
+      background-color: white;
+      border: solid 0.5px #dfdcdc;
+      padding: 10px;
+      font-size: 12px;
+
+      .storyHd {
+        height: 15px;
+
+        .storyInfoLeft {
+          color: grey;
+          font-weight: 600;
+        }
+
+        .storyInfoRight {
+          float: right;
+          font-weight: 600;
+        }
+      }
+
+      .followUser {
+        width: 25px;
+        border: solid 1.5px rgb(253, 83, 111);
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+
+      .followUserId {
+        position: absolute;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      .followUserStoryTime {
+        margin-left: 10px;
+        color: grey;
+      }
+    }
+
+    .recd {
+      margin-top: 15px;
+      height: 135px;
+      background-color: white;
+      border: solid 0.5px #dfdcdc;
+      padding: 10px;
+      font-size: 12px;
+
+      .recdHd {
+        height: 15px;
+
+        .recdHdLeft {
+          color: grey;
+          font-weight: 600;
+        }
+
+        .recdHdRight {
+          float: right;
+          font-weight: 600;
+        }
+      }
+
+      .recdUser {
+        width: 25px;
+        border: solid 1.5px #dfdcdc;
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+
+      .recdId {
+        position: absolute;
+        font-weight: 600;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      .recdCm {
+        margin-left: 10px;
+        color: grey;
+      }
+
+      .recdFollow {
+        float: right;
+        margin-top: 10px;
+        font-weight: 600;
+        color: blue;
+        color: rgba(0, 162, 255, 1);
+      }
+    }
+
+    .comInfo {
+      margin-top: 10px;
+      font-size: 11px;
+      text-align: left;
+      background-color: #f9f9f9;
+      width: 225px;
+
+      ul,
+      li,
+      a {
+        display: inline-block;
+        color: rgb(177, 176, 176);
+        margin-top: 1.5px;
+      }
+
+      .comName {
+        margin-top: 15px;
+        color: rgb(177, 176, 176);
+        display: block;
+      }
+    }
+  }
+}
